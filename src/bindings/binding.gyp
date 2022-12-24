@@ -1,8 +1,8 @@
 {
   "targets": [
     {
-      "target_name": "gaotp",
-      "sources": [ "gaotp.c" ]
+      "target_name": "gatop_node",
+      "sources": [ "gatop_node.c" ]
     }
   ]
 }
