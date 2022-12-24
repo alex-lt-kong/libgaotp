@@ -1,8 +1,8 @@
 {
   "targets": [
     {
-      "target_name": "hello",
-      "sources": [ "hello.c" ]
+      "target_name": "gaotp",
+      "sources": [ "gaotp.c" ]
     }
   ]
 }
