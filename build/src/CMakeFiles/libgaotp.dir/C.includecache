@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/repos/libgoogletotp/src/libgaotp.c
+stdio.h
+-
+time.h
+-
+mycrypto/hmac.h
+-
+mycrypto/sha1.h
+-
+mycrypto/base32.h
+-
+
