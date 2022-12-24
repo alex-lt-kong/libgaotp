@@ -1,5 +1,10 @@
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
+find_library(MYCRYPTO_LIB mycrypto)
+if(NOT MYCRYPTO_LIB)
+  message(FATAL_ERROR "mycrypto library not found")
+endif()
+
 add_library(libgaotp libgaotp.c)
 
 target_link_libraries(libgaotp mycrypto)

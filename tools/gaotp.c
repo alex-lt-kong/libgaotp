@@ -63,6 +63,16 @@ int main(int argc, char **argv) {
         print_help();
         return 1;
     }
-    getOTOP(secret_key, unix_time);
+    int otp = get_otp(secret_key, unix_time);
+    if (otp == -1) {
+        fprintf(stderr, "secret_key [%s] is not a valid base32 string\n", secret_key);
+        return 1;
+    } else if (otp == -2) {
+        fprintf(stderr, "malloc() failed\n");
+    } else if (otp < 0) {
+        fprintf(stderr, "unknown error %d\n", otp);
+    }
+
+    printf("%06d\n", otp);
     return 0;
 }
