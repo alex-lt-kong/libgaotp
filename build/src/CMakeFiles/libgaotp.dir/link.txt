@@ -1,2 +1,0 @@
-/usr/bin/ar qc liblibgaotp.a CMakeFiles/libgaotp.dir/libgaotp.c.o
-/usr/bin/ranlib liblibgaotp.a
