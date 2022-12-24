@@ -23,6 +23,8 @@ not tested.
 
 ## Build and install
 
+
+### C/C++ shared object
 ```
 mkdir -p ./build
 cd build
@@ -31,4 +33,13 @@ make
 ```
 ```
 sudo make install
+```
+
+### Node.js binding
+
+* `npm install -g node-gyp`
+
+```
+node-gyp configure
+node-gyp build
 ```
