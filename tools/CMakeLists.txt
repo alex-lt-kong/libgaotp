@@ -1,2 +1,2 @@
-add_executable(gaotp gaotp.c)
-target_link_libraries(gaotp mycrypto m)
+add_executable(gaotptool gaotptool.c)
+target_link_libraries(gaotptool mycrypto m)

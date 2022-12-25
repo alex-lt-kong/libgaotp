@@ -7,13 +7,10 @@ if(NOT MYCRYPTO_LIB)
   )
 endif()
 
-add_library(libgaotp libgaotp.c)
+add_library(gaotp gaotp.c)
 
-target_link_libraries(libgaotp mycrypto)
+target_link_libraries(gaotp mycrypto)
 
-set_target_properties(libgaotp PROPERTIES PUBLIC_HEADER "libgaotp.h")
+set_target_properties(gaotp PROPERTIES PUBLIC_HEADER "gaotp.h")
 
-install(TARGETS libgaotp 
-        LIBRARY DESTINATION lib
-        PUBLIC_HEADER DESTINATION gaotp
-)
+install(TARGETS gaotp)

@@ -1,5 +1,10 @@
 {
   "files.associations": {
-    "getopt.h": "c"
+    "getopt.h": "c",
+    "gaotp": "c",
+    "gaotp.h": "c",
+    "*.tcc": "c",
+    "complex": "c",
+    "functional": "c"
   }
 }

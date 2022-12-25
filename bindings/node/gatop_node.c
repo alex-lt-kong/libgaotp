@@ -1,12 +1,13 @@
 #include <assert.h>
 #include <node_api.h>
 #include <stdio.h>
-
+#include <gaotp.h>
+#include <string.h>
 
 // Refer to here for more examples: https://github.com/nodejs/node-addon-examples
-int32_t get_otp(const char* secret_b32, int64_t unix_time);
 
-static napi_value Add(napi_env env, napi_callback_info info) {
+
+static napi_value get_otp_napi(napi_env env, napi_callback_info info) {
   napi_status status;
 
   size_t argc = 2;
@@ -32,11 +33,13 @@ static napi_value Add(napi_env env, napi_callback_info info) {
     return NULL;
   }
 
-  const size_t buf_size = 1024;
+  const size_t buf_size = 32;
   size_t result;
   char secret_b32[buf_size];
   status = napi_get_value_string_latin1(env, args[0], secret_b32, buf_size, &result);
-  printf("%s\n", secret_b32);
+  if (result >= buf_size) {
+    fprintf(stderr, "the base32-encoded secret will be truncated to %lu characters\n", buf_size);
+  }
   assert(status == napi_ok);
 
   int64_t uinx_time;
@@ -57,8 +60,8 @@ static napi_value Add(napi_env env, napi_callback_info info) {
 
 napi_value Init(napi_env env, napi_value exports) {
   napi_status status;
-  napi_property_descriptor addDescriptor = DECLARE_NAPI_METHOD("add", Add);
-  status = napi_define_properties(env, exports, 1, &addDescriptor);
+  napi_property_descriptor get_otp_descriptor = DECLARE_NAPI_METHOD("get_otp", get_otp_napi);
+  status = napi_define_properties(env, exports, 1, &get_otp_descriptor);
   assert(status == napi_ok);
   return exports;
 }

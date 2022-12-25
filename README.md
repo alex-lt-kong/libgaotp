@@ -39,9 +39,17 @@ sudo make install
 
 ### Node.js binding
 
-* `npm install -g node-gyp`
+* Make sure `node` and `npm` are installed.
+* `node-gyp`, used to build Node.js' native addon: `npm install -g node-gyp`.
 
+* Build
 ```
+cd ./bindings/node/
 node-gyp configure
 node-gyp build
+```
+
+* Test
+```
+node gaotp.js
 ```
