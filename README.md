@@ -2,7 +2,8 @@
 
 It is nice to add two-factor authentication to some simple web services without relying on third-party online services
 to provide SMS/email functionalities. Using Google Authenticator could be a straightforward way--providing a secret
-key to Google Authenticator and then we get time-based 2FA.
+key to Google Authenticator [[Android](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2)
+/[iOS](https://apps.apple.com/us/app/google-authenticator/id388497605)] and then we get time-based 2FA.
 
 Unfortunately, while Google Authenticator is [open-sourced](https://github.com/google/google-authenticator), 
 it is only a mobile application and it does not provide an API for server-side OTP verification. Google also open
