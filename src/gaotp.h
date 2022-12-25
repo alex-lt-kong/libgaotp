@@ -1,3 +1,11 @@
+#ifndef GAOTP_H
+#define GAOTP_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
 #include <stdlib.h>
 #include <stdint.h>
 
@@ -11,3 +19,9 @@
  * -2 if malloc() failed
 */
 int32_t get_otp(const char* secret_b32, int64_t unix_time);
+
+#ifdef __cplusplus
+}
+#endif // __cplusplus
+
+#endif /* GAOTP_H */

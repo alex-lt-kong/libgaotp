@@ -33,12 +33,12 @@ static napi_value get_otp_napi(napi_env env, napi_callback_info info) {
     return NULL;
   }
 
-  const size_t buf_size = 32;
+  const size_t buf_size = 2048 + 1;
   size_t result;
   char secret_b32[buf_size];
   status = napi_get_value_string_latin1(env, args[0], secret_b32, buf_size, &result);
-  if (result >= buf_size) {
-    fprintf(stderr, "the base32-encoded secret will be truncated to %lu characters\n", buf_size);
+  if (result >= buf_size - 1) {
+    fprintf(stderr, "WARNING: the base32-encoded secret will be truncated to %lu characters\n", buf_size - 1);
   }
   assert(status == napi_ok);
 
