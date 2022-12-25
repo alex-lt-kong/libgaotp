@@ -7,7 +7,7 @@ if(NOT MYCRYPTO_LIB)
   )
 endif()
 
-add_library(gaotp gaotp.c)
+add_library(gaotp SHARED gaotp.c)
 
 target_link_libraries(gaotp mycrypto)
 

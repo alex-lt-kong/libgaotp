@@ -41,10 +41,21 @@ make
 sudo make install
 ```
 
+### Python binding
+
+* As Python provides native C interoperability. As long as the *C/C++ share object* is `make`ed, we should
+be able to simply run the Python script.
+
+```
+cd ./bindings/python/
+python3 gaotp.py
+```
+
 ### Node.js binding
 
+* Node.js's binding is a bit more complicated as we need to compile a translation layer into Node.js native addon.
 * Make sure `node` and `npm` are installed.
-* Make sure the C/C++ shared object (previous section) is `make install`ed.
+* Make sure the *C/C++ shared object* is `make install`ed.
 * `node-gyp`, used to build Node.js' native addon: `npm install -g node-gyp`.
   * Depending on the exact installation method, `node-gyp` may be directly invokded or via
   `./node_modules/node-gyp/bin/node-gyp.js`
