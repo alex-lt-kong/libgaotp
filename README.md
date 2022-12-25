@@ -27,12 +27,15 @@ It does not work on big-endian architecture platforms.
 
 
 ### C/C++ shared object
+
+* Build
 ```
 mkdir -p ./build
 cd build
 cmake ..
 make
 ```
+* Install
 ```
 sudo make install
 ```
@@ -40,7 +43,10 @@ sudo make install
 ### Node.js binding
 
 * Make sure `node` and `npm` are installed.
+* Make sure the C/C++ shared object (previous section) is `make install`ed.
 * `node-gyp`, used to build Node.js' native addon: `npm install -g node-gyp`.
+  * Depending on the exact installation method, `node-gyp` may be directly invokded or via
+  `./node_modules/node-gyp/bin/node-gyp.js`
 
 * Build
 ```

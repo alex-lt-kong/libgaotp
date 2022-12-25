@@ -1,8 +1,8 @@
 {
   "targets": [
     {
-      "target_name": "gatop",
-      "sources": [ "gatop_node.c" ],
+      "target_name": "gaotp",
+      "sources": [ "gaotp_node.c" ],
       "libraries":  [ "-lgaotp", "-lmycrypto" ]
     },{
          "target_name": "copy_binary",
@@ -12,7 +12,7 @@
          [
             {
                'destination': '<(module_root_dir)',
-               'files': ['<(module_root_dir)/build/Release/gatop.node']
+               'files': ['<(module_root_dir)/build/Release/gaotp.node']
             }
          ]
       }
