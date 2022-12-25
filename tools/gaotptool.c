@@ -5,7 +5,7 @@
 
 void print_help() {
     printf(
-        "Usage: gaotp\n"
+        "Usage: gaotptool\n"
         "    -s, --secret-key <secret_key>     The base32-encoded secret key used to generate one-time password\n"
         "    [-u, --unix-time <unix_time>]     The unix timestamp used to generate one-time password\n"
     );
