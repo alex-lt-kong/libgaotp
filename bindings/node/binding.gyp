@@ -7,11 +7,11 @@
     },{
          "target_name": "copy_binary",
          "type":"none",
-         "dependencies" : [ "gatop" ],
+         "dependencies" : [ "gaotp" ],
          "copies":
          [
             {
-               'destination': '<(module_root_dir)',
+               'destination': '<(module_root_dir)/',
                'files': ['<(module_root_dir)/build/Release/gaotp.node']
             }
          ]
