@@ -1,9 +1,8 @@
 import ctypes as ct
 import os
 
-so_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../build/src/libgaotp.so')
-
-
+current_dir = os.path.dirname(os.path.abspath(__file__))
+so_file_path = os.path.join(current_dir, '../../build/src/libgaotp.so')
 gaotp = ct.CDLL(so_file_path)
 
 gaotp.get_otp.argtypes = [ct.c_char_p, ct.c_int]

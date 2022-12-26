@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <getopt.h>
-#include "../src/gaotp.c"
+#include <gaotp.h>
 
 void print_help() {
     printf(
